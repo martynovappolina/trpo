@@ -5,3 +5,4 @@ SQLAlchemy==2.0.17
 psycopg2==2.9.6
 PyJWT==2.7.0
 python-multipart~=0.0.6
+pydantic==1.10.9

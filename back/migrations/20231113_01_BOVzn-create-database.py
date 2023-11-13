@@ -48,7 +48,7 @@ steps = [
     CREATE TABLE Dangers (
         dangerID uuid PRIMARY KEY,
         title varchar(32) NOT NULL,
-        description varchar(32),
+        description varchar(255),
         imgUrl varchar(32),
         price int NOT NULL
     );
