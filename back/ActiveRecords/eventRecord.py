@@ -1,7 +1,7 @@
+from ActiveRecords.cameraRecord import CameraRecord
 from Domain.base import Base
 import uuid
-from sqlalchemy import Column, String, UUID, DateTime, ForeignKey
-from sqlalchemy.dialects.postgresql import JSON
+from sqlalchemy import Column, String, UUID, DateTime, ForeignKey, JSON
 
 class EventRecord(Base):
     __tablename__ = 'events'
@@ -28,9 +28,16 @@ class EventRecord(Base):
 
     @staticmethod
     def getByOrganizationID(db, id):
-        events = db.query(EventRecord).filter(EventRecord.organizationID == id)
+        events = db.query(EventRecord).join(CameraRecord, EventRecord.cameraID == CameraRecord.cameraID).with_entities(CameraRecord, EventRecord).filter(CameraRecord.organizationID == id).all()
         # events = list(map(lambda event: EventRecord(event), events))
-        return events
+        return list(map(lambda x: {
+            "eventID": x.EventRecord.eventID,
+            "cameraLocation": x.CameraRecord.location,
+            "cameraAddress": x.CameraRecord.address,
+            "dateTime": x.EventRecord.dateTime,
+            "imgUrl": x.EventRecord.imgUrl,
+            "labels": x.EventRecord.labels
+        }, events))
 
     def delete(self, db):
         db.query(EventRecord).filter(EventRecord.eventID == self.eventID).first().delete()

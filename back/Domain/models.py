@@ -21,14 +21,6 @@ class Subscription(Base):
     price = Column(Integer, nullable=False)
 
 
-class Camera(Base):
-    __tablename__ = 'cameras'
-
-    cameraID = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    address = Column(String(255), nullable=False)
-    specificationsID = Column(UUID(as_uuid=True), ForeignKey('specifications.specificationsID'))
-    location = Column(String(255), nullable=False)
-
 class Specification(Base):
     __tablename__ = 'specifications'
 

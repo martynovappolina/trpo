@@ -51,7 +51,7 @@ steps = [
 
     # Заполнение таблицы Events
     step("""
-    INSERT INTO Events ("eventID", "dateTime", "imgUrl", "cameraID", "dangerID") 
-    VALUES (1, '2023-01-01 12:00:00', 'event1.jpg', '550e8400-e29b-41d4-a716-446655440006', '550e8400-e29b-41d4-a716-446655440003');
+    INSERT INTO Events ("eventID", "dateTime", "imgUrl", labels, "cameraID", "dangerID") 
+    VALUES ('550e8400-e29b-41d4-a716-446655440057', '2023-01-01 12:00:00', 'event1.jpg', '{}', '550e8400-e29b-41d4-a716-446655440006', '550e8400-e29b-41d4-a716-446655440003');
     """),
 ]
