@@ -22,7 +22,7 @@ ALGORITHM = "HS256"
 
 def get_user_token(user: UserRecord):
     expire = datetime.utcnow() + timedelta(minutes=480)
-    return jwt.encode({"userId": str(user.Id), "email": user.Email, "exp": expire}, SECRET_KEY, algorithm=ALGORITHM)
+    return jwt.encode({"userId": str(user.userID), "email": user.email, "exp": expire}, SECRET_KEY, algorithm=ALGORITHM)
 
 
 def get_db():
