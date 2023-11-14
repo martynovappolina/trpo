@@ -20,13 +20,6 @@ class Subscription(Base):
     endDate = Column(Date, nullable=False)
     price = Column(Integer, nullable=False)
 
-class Event(Base):
-    __tablename__ = 'events'
-
-    eventID = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    cameraID = Column(UUID(as_uuid=True), ForeignKey('cameras.cameraID'))
-    eventDate = Column(DateTime, nullable=False)
-    eventType = Column(String(50), nullable=False)
 
 class Camera(Base):
     __tablename__ = 'cameras'

@@ -1,4 +1,3 @@
-from sqlalchemy import select
 import uuid
 from sqlalchemy import Column, String, UUID, Integer, ForeignKey
 from Domain.base import Base
