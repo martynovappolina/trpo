@@ -37,10 +37,10 @@ class UserRecord(Base):
         db.commit()
 
     def delete(self, db):
-        db.query(UserRecord).filter(UserRecord.userID == id).first().delete()
+        db.query(UserRecord).filter(UserRecord.userID == self.userID).first().delete()
 
     def update(self, db):
-        user = db.query(UserRecord).filter(UserRecord.userID == id).first()
+        user = db.query(UserRecord).filter(UserRecord.userID == self.userID).first()
         user.email = self.email
         user.login = self.login
         user.roleID = self.roleID

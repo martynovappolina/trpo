@@ -21,9 +21,43 @@ class EventRecord(Base):
         self.imgUrl = imgUrl
         self.labels = labels
 
-    # create()
-    # getByOrganizationID()
-    # update()
-    # delete()
+    @staticmethod
+    def getById(db, id):
+        event = db.query(EventRecord).filter(EventRecord.eventID == id).first()
+        return event
+
+    @staticmethod
+    def getByOrganizationID(db, id):
+        events = db.query(EventRecord).filter(EventRecord.organizationID == id)
+        # events = list(map(lambda event: EventRecord(event), events))
+        return events
+
+    def delete(self, db):
+        db.query(EventRecord).filter(EventRecord.eventID == self.eventID).first().delete()
+
+    def update(self, db):
+        event = db.query(EventRecord).filter(EventRecord.eventID == self.eventID).first()
+        event.eventID = self.eventID
+        event.cameraID = self.cameraID
+        event.dangerID = self.dangerID
+        event.dateTime = self.dateTime
+        event.imgUrl = self.imgUrl
+        event.labels = self.labels
+
+    def create(self, db):
+        # полный вариант:
+        # - вывести видео с вебки
+        # - передавать каждый 10? кадр на бэк
+        # - проанализировать
+        # - сохранить
+        # вариант минимум:
+        # - добавление изображения
+        # - передача на бэк
+        # - анализ
+        # - сохранить
+        db.add(self)
+        db.commit()
+
+
 
 
