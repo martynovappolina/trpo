@@ -91,7 +91,6 @@ steps = [
         eventID int PRIMARY KEY,
         dateTime date NOT NULL,
         imgUrl varchar(32),
-        videoUrl varchar(32),
         cameraID uuid REFERENCES Cameras(cameraID),
         dangerID uuid REFERENCES Dangers(dangerID)
     );

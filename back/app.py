@@ -2,11 +2,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 import uvicorn
 from utils import run_migration
-# from Api.routers import router
+from Api.routers import router
 
 app = FastAPI(title="TRPO API")
 
-# app.include_router(router)
+app.include_router(router)
 
 app.add_middleware(
     CORSMiddleware,
@@ -15,7 +15,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 if __name__ == "__main__":
     run_migration()

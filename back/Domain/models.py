@@ -5,19 +5,7 @@ from sqlalchemy import Column, String, UUID, Integer, ForeignKey, Date, DateTime
 from Domain.base import Base
 
 
-class Users(Base):
-    __tablename__ = 'users'
-
-    userID = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    email = Column(String(255), nullable=False)
-    login = Column(String(255), nullable=False)
-    passwordHash = Column(String(255), nullable=False)
-    roleID = Column(Integer, nullable=False)
-    telegram = Column(String(255))
-    telephoneNumber = Column(String(20))
-    organizationID = Column(UUID(as_uuid=True), ForeignKey('organizations.organizationID'))
-
-class Organizations(Base):
+class Organization(Base):
     __tablename__ = 'organizations'
 
     organizationID = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
@@ -25,14 +13,14 @@ class Organizations(Base):
     telephoneNumber = Column(String(20), nullable=False)
     title = Column(String(255), nullable=False)
 
-class Subscriptions(Base):
+class Subscription(Base):
     __tablename__ = 'subscriptions'
 
     subscriptionID = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     endDate = Column(Date, nullable=False)
     price = Column(Integer, nullable=False)
 
-class Events(Base):
+class Event(Base):
     __tablename__ = 'events'
 
     eventID = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
@@ -40,7 +28,7 @@ class Events(Base):
     eventDate = Column(DateTime, nullable=False)
     eventType = Column(String(50), nullable=False)
 
-class Cameras(Base):
+class Camera(Base):
     __tablename__ = 'cameras'
 
     cameraID = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
@@ -48,7 +36,7 @@ class Cameras(Base):
     specificationsID = Column(UUID(as_uuid=True), ForeignKey('specifications.specificationsID'))
     location = Column(String(255), nullable=False)
 
-class Specifications(Base):
+class Specification(Base):
     __tablename__ = 'specifications'
 
     specificationsID = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
