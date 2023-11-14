@@ -38,7 +38,7 @@ class UserRecord(Base):
         db.commit()
 
     def delete(self, db):
-        db.query(UserRecord).filter(UserRecord.userID == id).delete()
+        db.query(UserRecord).filter(UserRecord.userID == id).first().delete()
 
     def update(self, db):
         user = db.query(UserRecord).filter(UserRecord.userID == id).first()
@@ -51,6 +51,6 @@ class UserRecord(Base):
 
 
     def get_by_login(self, db, login):
-        return db.scalars(select(UserRecord).where(UserRecord.login == login)).first()
+        return db.query(UserRecord).filter(UserRecord.login == login).first()
 
 
