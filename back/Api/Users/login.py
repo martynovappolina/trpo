@@ -1,5 +1,5 @@
 from Api.Users.usersRouter import router
-from Handlers.BaseHandler import LoginHandler
+from Handlers.LoginHandler import LoginHandler
 
 
 @router.post("/login")
