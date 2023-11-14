@@ -1,7 +1,7 @@
 import hashlib
 
 from ActiveRecords.userRecord import UserRecord
-from Handlers.BaseHandler import BaseHandler
+from Handlers.baseHandler import BaseHandler
 from utils import get_user_token
 
 
