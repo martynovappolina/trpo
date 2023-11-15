@@ -1,0 +1,18 @@
+@import '../../shared/variables.scss';
+
+.menu-page {
+    margin-top: 150px;
+    width: 400px;
+
+    &-item {
+        cursor: pointer;
+        margin: 10px;
+        padding: 10px 15px;
+        border: solid 1px $border;
+        text-align: left;
+
+        &:hover {
+            background-color: $hover-white;
+        }
+    }
+}

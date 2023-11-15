@@ -8,6 +8,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import ToastContainer from './shared/ToastContainer/ToastContainer';
 import { useEffect } from 'react';
+import MenuPage from './pages/MenuPage/MenuPage';
 
 function App() {
   const componentWithMenu = (component) =>{
@@ -22,6 +23,11 @@ function App() {
       {
         path: "/login",
         element: <LoginPage />,
+        errorElement: <ErrorPage />
+      },
+      {
+        path: "/menu",
+        element: componentWithMenu(<MenuPage />),
         errorElement: <ErrorPage />
       },
     ]

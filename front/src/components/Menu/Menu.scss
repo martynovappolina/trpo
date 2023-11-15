@@ -1,0 +1,17 @@
+.menu {
+    position: absolute;
+    top: 0;
+    left: calc((100vw - 600px)/2);
+    height: 120px;
+    padding-top: 100px;
+    display: flex;
+
+    &-item {
+        font-weight: 600;
+        padding-left: 21px;
+        background: url('../../../public/icons/right.svg');
+        background-size: 20px 20px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+}
