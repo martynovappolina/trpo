@@ -88,12 +88,13 @@ steps = [
     # Создание таблицы Events
     step("""
     CREATE TABLE Events (
-        "eventID" int PRIMARY KEY,
-        "dateTime" date NOT NULL,
-        "imgUrl" varchar(32),
+        "eventID" uuid PRIMARY KEY,
+        "dateTime" timestamp NOT NULL,
+        "imgID" varchar(32),
+        "note" varchar(255),
+        "isImportant" boolean NOT NULL,
         "labels" json,
-        "cameraID" uuid REFERENCES Cameras("cameraID"),
-        "dangerID" uuid REFERENCES Dangers("dangerID")
+        "cameraID" uuid REFERENCES Cameras("cameraID")
     );
     """),
 ]
