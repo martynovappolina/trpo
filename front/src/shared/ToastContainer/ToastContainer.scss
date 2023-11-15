@@ -1,0 +1,84 @@
+@import '../variables.scss';
+
+.toast {
+    position: relative;
+    width: 300px;
+    color: white;
+    border-radius: 3px;
+    padding: 15px 25px;
+    padding-left: 45px;
+    cursor: default;
+    margin: 15px;
+    animation: progress 0.25s linear forwards;
+    display: flex;
+    align-items: center;
+
+    @keyframes progress {
+        0% {
+            right: -100%;  
+        }
+        100%{
+            right: 0;
+        }
+      }
+
+    &-progress-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 5px;
+        width: 100%;
+        opacity: 50%;
+        background-color: white;
+        border-radius: 0 0 3px 3px;
+    }
+
+    &-icon-success, &-icon-error {
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        left: 10px;
+    }
+
+    &-icon-success {
+        background: url('../../../public/icons/toast-success.svg');
+    }
+
+    &-icon-error {
+        background: url('../../../public/icons/cancel.svg');
+    }
+
+    &.success {
+        background-color: $toast-success;
+
+        &.mouse-over {
+            background-color: $toast-success-hover !important;
+        }
+    }
+
+    &.error {
+        background-color: $toast-error;
+
+        &.mouse-over {
+            background-color: $toast-error-hover !important;
+        }
+    }
+
+    &-close-icon {
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+        background: url('../../../public/icons/close-white.svg');
+    }
+
+    &-container {
+        z-index: 9999999999;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+    }
+}
+

@@ -1,0 +1,39 @@
+@import '../../../variables.scss';
+
+.grid-table-theader {
+    &-search-icon, &-filter-icon, &-sort-icon, &-sort-icon-asc, &-sort-icon-desc {
+        width: 15px;
+        height: 15px;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        margin-right: 2px;
+        cursor: pointer;
+    }
+
+    &-search-icon {
+        background: url('../../../../../public/icons/search.svg');
+    }
+
+    &-filter-icon {
+        background: url('../../../../../public/icons/filter.svg');
+        
+        &.filtered {
+            width: 20px;
+            height: 20px;
+            background-color: $filtered !important;
+            padding-left: 2px;
+            background: url('../../../../../public/icons/filter-white.svg');
+            border-radius: 50%;
+        }
+    }
+
+    &-sort-icon {   
+        background: url('../../../../../public/icons/sort.svg');
+    }
+    &-sort-icon-asc {   
+        background: url('../../../../../public/icons/sort-asc.svg');
+    }
+    &-sort-icon-desc {   
+        background: url('../../../../../public/icons/sort-desc.svg');
+    }
+}

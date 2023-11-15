@@ -1,0 +1,30 @@
+@import '../../shared/variables.scss';
+
+.login {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &-input {
+        &-container {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin: 10px 0;
+        }
+    }
+
+    &-restore-access {
+        font-size: 10px;
+        margin: 10px 0;
+    }
+
+    &-header {
+        font-size: 50px;
+        font-weight: 600;
+        color: #334155;
+    }
+}
