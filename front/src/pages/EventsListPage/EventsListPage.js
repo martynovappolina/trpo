@@ -1,7 +1,7 @@
 import CustomCheckbox from '../../shared/CustomCheckbox/CustomCheckbox'
 import DateTimeComponent from '../../shared/DateTimeComponent/DateTimeComponent'
 import GridTable from '../../shared/GridTable/GridTable'
-import api from '../../shared/api'
+import api, { apiBaseUrl } from '../../shared/api'
 import './EventsListPage.scss'
 
 const EventsListPage = () => {
@@ -13,7 +13,8 @@ const EventsListPage = () => {
                 columns={[
                     {
                         title: 'Изображение',
-                        content: val => val.imgID
+                        style: {width: '120px'},
+                        content: val => <img src={`${apiBaseUrl}api/events/getImage?imageId=${val.imgID}&preview=true`} />
                     },
                     {
                         title: 'Дата и время',

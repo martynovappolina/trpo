@@ -49,9 +49,4 @@ steps = [
     VALUES ('550e8400-e29b-41d4-a716-446655440006', 'Address 1', 'Location 1', '550e8400-e29b-41d4-a716-446655440005', '550e8400-e29b-41d4-a716-446655440000');
     """),
 
-    # Заполнение таблицы Events
-    step("""
-    INSERT INTO Events ("eventID", "dateTime", "imgID", labels, "cameraID", "note", "isImportant")
-    VALUES ('550e8400-e29b-41d4-a716-446655440057', '2023-01-01 12:00:00', 'event1.jpg', '{}', '550e8400-e29b-41d4-a716-446655440006', 'привет, мир!', true);
-    """),
 ]
