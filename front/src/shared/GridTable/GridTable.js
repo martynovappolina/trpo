@@ -6,7 +6,7 @@ import './GridTable.scss'
 const GridTable = ({ 
     reloadTrigger,
     columns, 
-    onRowClick,  
+    onRowClick = () => {},  
     load, 
 }) => {
     const [innerValues, setInnerValues] = useState([])
@@ -37,14 +37,11 @@ const GridTable = ({
                     </thead>
                     <tbody>
                         {innerValues.map((value) => 
-                            <tr>
+                            <tr onClick={() => onRowClick(value)}>
                                 {columns.map(col => 
                                     <td>
                                         {
-                                            col.content(value, ()=>{
-                                                if(onRowClick != undefined) 
-                                                    onRowClick(value)
-                                            })
+                                            col.content(value)
                                         }
                                     </td>)}
                             </tr>

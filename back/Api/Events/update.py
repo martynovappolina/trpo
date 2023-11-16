@@ -3,7 +3,7 @@ from Handlers.Events.getByOrganizationIDHandler import getByOrganizationIDHandle
 from Handlers.Events.updateHandler import UpdateHandler
 
 
-@router.get("/update")
+@router.post("/update")
 def getByOrganizationID(id, note, isImportant):
     result = UpdateHandler().run_core({"id": id, "note": note, "isImportant": isImportant})
     if result["is_ok"]:

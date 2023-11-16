@@ -61,9 +61,18 @@ const api = () => {
         getEventsByOrganizationID: () => {
             return requestGet(`api/events/getByOrganizationID?id=${localStorage.getItem('organizationID')}`)
         },
+
         sendPhoto: (data) => {
             return requestPost(`api/events/create?cameraID=550e8400-e29b-41d4-a716-446655440006`, data, true)
         },
+
+        getEventById: (id) => {
+            return requestGet(`api/events/getByID?id=${id}`)
+        },
+
+        updateEvent: (id, note, isImportant) => {
+            return requestPost(``)
+        }
     }
 }
 

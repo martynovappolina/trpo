@@ -1,15 +1,20 @@
+import { useState } from 'react'
 import CustomCheckbox from '../../shared/CustomCheckbox/CustomCheckbox'
 import DateTimeComponent from '../../shared/DateTimeComponent/DateTimeComponent'
 import GridTable from '../../shared/GridTable/GridTable'
 import api, { apiBaseUrl } from '../../shared/api'
 import './EventsListPage.scss'
+import EventModal from './components/EventModal/EventModal'
 
 const EventsListPage = () => {
+    const [currentEventID, setCurrentEventID] = useState(null)
+
     return (
         <div className='container'>
             <div className='events-list-page'>
                 <GridTable 
                 load={api.getEventsByOrganizationID}
+                onRowClick={row => {setCurrentEventID(row.eventID)}}
                 columns={[
                     {
                         title: 'Изображение',
@@ -39,6 +44,11 @@ const EventsListPage = () => {
                 ]}
                 />
             </div>
+
+            <EventModal
+            currentItemId={currentEventID}
+            setCurrentItemId={setCurrentEventID}
+            />
         </div>
     )
 }
