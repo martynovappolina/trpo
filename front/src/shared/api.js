@@ -71,7 +71,7 @@ const api = () => {
         },
 
         updateEvent: (id, note, isImportant) => {
-            return requestPost(``)
+            return requestPost(`api/events/update?id=${id}&note=${note}&isImportant=${isImportant}`)
         }
     }
 }

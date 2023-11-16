@@ -8,6 +8,7 @@ import EventModal from './components/EventModal/EventModal'
 
 const EventsListPage = () => {
     const [currentEventID, setCurrentEventID] = useState(null)
+    const [reloadTrigger, setReloadTrigger] = useState(false)
 
     return (
         <div className='container'>
@@ -15,6 +16,7 @@ const EventsListPage = () => {
                 <GridTable 
                 load={api.getEventsByOrganizationID}
                 onRowClick={row => {setCurrentEventID(row.eventID)}}
+                reloadTrigger={reloadTrigger}
                 columns={[
                     {
                         title: 'Изображение',
@@ -48,6 +50,8 @@ const EventsListPage = () => {
             <EventModal
             currentItemId={currentEventID}
             setCurrentItemId={setCurrentEventID}
+            reloadTrigger={reloadTrigger}
+            setReloadTrigger={setReloadTrigger}
             />
         </div>
     )

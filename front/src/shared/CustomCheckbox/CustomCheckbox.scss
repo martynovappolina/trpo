@@ -11,6 +11,9 @@ table td > .custom-checkbox {
     position: relative;
     height: 30px;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
 
     input {
         display: none;

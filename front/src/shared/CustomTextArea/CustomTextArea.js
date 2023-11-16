@@ -22,7 +22,7 @@ const CustomTextArea = ({
     }, [value])
 
     return (
-        <div className='textarea'>
+        <div className='textarea-container'>
             <div className='textarea-label'>{label}</div>
             <textarea 
             type={type ?? ''}
