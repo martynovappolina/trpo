@@ -24,8 +24,10 @@ class EventRecord(Base):
         self.isImportant = isImportant
 
     @staticmethod
-    def getById(db, id):
-        event = db.query(EventRecord).filter(EventRecord.eventID == id).first()
+    def getByID(db, id):
+        event = db.query(EventRecord) \
+            .filter(EventRecord.eventID == id) \
+            .first()
         return event
 
     @staticmethod

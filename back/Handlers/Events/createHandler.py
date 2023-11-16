@@ -34,7 +34,7 @@ class CreateHandler(BaseHandler):
         preview = cv2.resize(img, (160, 120))
         cv2.imwrite(previews_path + "/{}.png".format(imgId), preview)
 
-        event = EventRecord(uuid4(), params["cameraID"], datetime.now(), imgId, {}, '', True)
+        event = EventRecord(uuid4(), params["cameraID"], datetime.now(), imgId, [], '', True)
         event.create(db)
 
         return {"is_ok": True, "error": "event error"}
