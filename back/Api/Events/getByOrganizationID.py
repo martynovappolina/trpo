@@ -1,10 +1,10 @@
 from Api.Events.eventsRouter import router
-from Handlers.Events.getByOrganizationIDHandler import getByOrganizationIDHandler
+from Handlers.Events.getByOrganizationIDHandler import GetByOrganizationIDHandler
 
 
 @router.get("/getByOrganizationID")
 def getByOrganizationID(id):
-    result = getByOrganizationIDHandler().run_core(id)
+    result = GetByOrganizationIDHandler().run_core(id)
     if result["is_ok"]:
         return {"is_ok": True, "data": result["data"]}
     else:

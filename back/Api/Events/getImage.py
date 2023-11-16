@@ -3,7 +3,6 @@ from Api.Events.eventsRouter import router
 
 @router.get("/getImage")
 def get_image(imageId: str, preview: bool = False):
-
     if preview:
         images_path = './previews'
 

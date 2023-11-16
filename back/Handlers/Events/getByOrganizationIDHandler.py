@@ -2,7 +2,7 @@ from ActiveRecords.eventRecord import EventRecord
 from Handlers.baseHandler import BaseHandler
 
 
-class getByOrganizationIDHandler(BaseHandler):
+class GetByOrganizationIDHandler(BaseHandler):
     def run(self, db, id):
         events = EventRecord.getByOrganizationID(db, id)
         if events is not None:
