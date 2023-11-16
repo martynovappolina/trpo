@@ -1,5 +1,5 @@
 from Api.Events.eventsRouter import router
-from Handlers.Events.getByOrganizationIDHandler import getByOrganizationIDHandler
+from Handlers.Events.getByOrganizationIDHandler import GetByOrganizationIDHandler
 from Handlers.Events.updateHandler import UpdateHandler
 
 
