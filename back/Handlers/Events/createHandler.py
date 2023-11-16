@@ -37,4 +37,4 @@ class CreateHandler(BaseHandler):
         event = EventRecord(uuid4(), params["cameraID"], datetime.now(), imgId, {}, '', True)
         event.create(db)
 
-        return {"is_ok": False, "error": "event error"}
+        return {"is_ok": True, "error": "event error"}

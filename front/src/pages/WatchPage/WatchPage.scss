@@ -1,3 +1,10 @@
 .watch-page {
-    margin-top: 80px;
+    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .button {
+        margin-top: 15px;
+    }
 }

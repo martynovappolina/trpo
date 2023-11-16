@@ -11,6 +11,6 @@ def create(cameraID, data: bytes = Depends(parse_body)):
     # data = data.decode('utf-8')
     result = CreateHandler().run_core({'cameraID': cameraID, "img": data})
     if result["is_ok"]:
-        return {"is_ok": True, "data": result["data"]}
+        return {"is_ok": True}
     else:
         return {"is_ok": False, "error": result["error"]}
