@@ -15,8 +15,10 @@ class getByOrganizationIDHandler(BaseHandler):
             "cameraLocation": x.CameraRecord.location,
             "cameraAddress": x.CameraRecord.address,
             "dateTime": x.EventRecord.dateTime,
-            "imgUrl": x.EventRecord.imgUrl,
-            "labels": x.EventRecord.labels
+            "imgID": x.EventRecord.imgID,
+            "labels": x.EventRecord.labels,
+            "note": x.EventRecord.note,
+            "isImportant": x.EventRecord.isImportant,
         }, events))}
 
         return {"is_ok": False, "error": "event error"}

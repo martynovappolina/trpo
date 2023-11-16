@@ -11,29 +11,29 @@
     }
 
     &-search-icon {
-        background: url('../../../../../public/icons/search.svg');
+        // background: url('../../../../../public/icons/search.svg');
     }
 
     &-filter-icon {
-        background: url('../../../../../public/icons/filter.svg');
+        // background: url('../../../../../public/icons/filter.svg');
         
         &.filtered {
             width: 20px;
             height: 20px;
-            background-color: $filtered !important;
+            // background-color: $filtered !important;
             padding-left: 2px;
-            background: url('../../../../../public/icons/filter-white.svg');
+            // background: url('../../../../../public/icons/filter-white.svg');
             border-radius: 50%;
         }
     }
 
     &-sort-icon {   
-        background: url('../../../../../public/icons/sort.svg');
+        // background: url('../../../../../public/icons/sort.svg');
     }
     &-sort-icon-asc {   
-        background: url('../../../../../public/icons/sort-asc.svg');
+        // background: url('../../../../../public/icons/sort-asc.svg');
     }
     &-sort-icon-desc {   
-        background: url('../../../../../public/icons/sort-desc.svg');
+        // background: url('../../../../../public/icons/sort-desc.svg');
     }
 }

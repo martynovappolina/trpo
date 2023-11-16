@@ -1,0 +1,34 @@
+table td > .custom-checkbox {
+    position: static;
+
+    &::before {
+        position: static;
+    }
+}
+
+.custom-checkbox {
+    cursor: pointer;
+    position: relative;
+    height: 30px;
+    width: 100%;
+
+    input {
+        display: none;
+    }
+
+    &-label {
+        position: absolute;
+        left: 35px;
+        bottom: 5px;
+    }
+
+    &::before {
+        position: absolute;
+        bottom: 0px;
+        content: url('../../../public/icons/checkbox-unchecked.svg');
+    }
+
+    &.checked::before{
+        content: url('../../../public/icons/checkbox-checked.svg');
+    }
+}

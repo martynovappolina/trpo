@@ -42,6 +42,7 @@ const LoginPage = () => {
             .then(resp => {
                 if (resp.is_ok) {
                     localStorage.setItem('token', resp.token)
+                    localStorage.setItem('organizationID', resp.organizationID)
                     window.location = '/menu'
                 }
                 else {
@@ -57,7 +58,6 @@ const LoginPage = () => {
         <div className='login'>
             <div className='login-header'>Вход</div>
             <div className='login-input-container'>
-                Введите логин
                 <input 
                 type='text'
                 placeholder='Логин'
@@ -71,7 +71,6 @@ const LoginPage = () => {
             <div 
             style={{marginBottom: '25px'}}
             className='login-input-container'>
-                Введите пароль
                 <input 
                 type='password'
                 placeholder='Пароль'

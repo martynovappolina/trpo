@@ -9,6 +9,7 @@ import ErrorPage from './pages/ErrorPage/ErrorPage';
 import ToastContainer from './shared/ToastContainer/ToastContainer';
 import { useEffect } from 'react';
 import MenuPage from './pages/MenuPage/MenuPage';
+import EventsListPage from './pages/EventsListPage/EventsListPage';
 
 function App() {
   const componentWithMenu = (component) =>{
@@ -28,6 +29,11 @@ function App() {
       {
         path: "/menu",
         element: componentWithMenu(<MenuPage />),
+        errorElement: <ErrorPage />
+      },
+      {
+        path: "/events",
+        element: componentWithMenu(<EventsListPage />),
         errorElement: <ErrorPage />
       },
     ]

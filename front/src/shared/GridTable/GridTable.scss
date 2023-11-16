@@ -17,7 +17,6 @@
         display: inline-block;
         width: 20px;
         height: 20px;
-        background: url('../../../public/icons/copy.svg');
         background-size: 100% 100%;
         margin-left: 5px;
         vertical-align: sub;
@@ -94,6 +93,7 @@
             }
     
             &:first-child td {
+                padding: 10px;
                 border-top: 0;
             }
     

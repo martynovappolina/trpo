@@ -53,12 +53,14 @@ const api = () => {
         return request('delete', url, data)
     }
 
-
-
     return {
         login: (login, password) => {
             return requestPost(`api/users/login?login=${login}&password=${password}`)
         },
+
+        getEventsByOrganizationID: () => {
+            return requestGet(`api/events/getByOrganizationID?id=${localStorage.getItem('organizationID')}`)
+        }
     }
 }
 
