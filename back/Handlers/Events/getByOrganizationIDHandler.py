@@ -1,9 +1,5 @@
-import hashlib
-
 from ActiveRecords.eventRecord import EventRecord
-from ActiveRecords.userRecord import UserRecord
 from Handlers.baseHandler import BaseHandler
-from utils import get_user_token
 
 
 class getByOrganizationIDHandler(BaseHandler):

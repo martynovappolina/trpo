@@ -13,12 +13,6 @@ const LoginPage = () => {
     const [loginError, setLoginError]= useState(false)
     const [passwordError, setPasswordError] = useState(false)
 
-    useEffect(() => {
-        if (localStorage.getItem('token')) {
-            
-        }
-    }, [])
-
     const onKeyDown = (e) => {
         if(e.key === 'Enter')
             onSignIn()  

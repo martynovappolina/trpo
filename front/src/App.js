@@ -10,6 +10,7 @@ import ToastContainer from './shared/ToastContainer/ToastContainer';
 import { useEffect } from 'react';
 import MenuPage from './pages/MenuPage/MenuPage';
 import EventsListPage from './pages/EventsListPage/EventsListPage';
+import WatchPage from './pages/WatchPage/WatchPage';
 
 function App() {
   const componentWithMenu = (component) =>{
@@ -36,12 +37,20 @@ function App() {
         element: componentWithMenu(<EventsListPage />),
         errorElement: <ErrorPage />
       },
+      {
+        path: "/watch",
+        element: componentWithMenu(<WatchPage />),
+        errorElement: <ErrorPage />
+      },
     ]
   )
 
-  // useEffect((() => {
-  //   if(localStorage.getItem('token') !== null) window.location.pathname = '/login'
-  // }), [])
+  useEffect((() => {
+    if(localStorage.getItem('token') == null) {
+      if(window.location.pathname !== '/login')
+        window.location = '/login'      
+    }
+  }), [])
 
   return (
     <div className="App">

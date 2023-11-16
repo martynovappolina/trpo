@@ -7,6 +7,9 @@ const Menu = () => {
             {
                 window.location.pathname === '/events' && <div className='menu-item'>Просмотр отчетов</div>
             }
+            {
+                window.location.pathname === '/watch' && <div className='menu-item'>Наблюдение</div>
+            }
         </div>
     )
 };

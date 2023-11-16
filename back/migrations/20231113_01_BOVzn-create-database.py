@@ -11,9 +11,9 @@ steps = [
     step("""
     CREATE TABLE Organizations (
         "organizationID" uuid PRIMARY KEY,
-        "title" varchar(32) NOT NULL,
-        "address" varchar(32),
-        "telephoneNumber" varchar(32)
+        "title" character varying NOT NULL,
+        "address" character varying,
+        "telephoneNumber" character varying
     );
     """),
 
@@ -21,12 +21,12 @@ steps = [
     step("""
         CREATE TABLE Users (
             "userID" uuid PRIMARY KEY,
-            "email" varchar(32) NOT NULL,
-            "login" varchar(32) NOT NULL,
-            "passwordHash" varchar(255) NOT NULL,
+            "email" character varying NOT NULL,
+            "login" character varying NOT NULL,
+            "passwordHash" character varying NOT NULL,
             "roleID" int NOT NULL,
-            "telegram" varchar(32),
-            "telephoneNumber" varchar(32),
+            "telegram" character varying,
+            "telephoneNumber" character varying,
             "organizationID" uuid REFERENCES Organizations("organizationID")
         );
     """),
@@ -47,9 +47,9 @@ steps = [
     step("""
     CREATE TABLE Dangers (
         "dangerID" uuid PRIMARY KEY,
-        "title" varchar(32) NOT NULL,
-        "description" varchar(255),
-        "imgUrl" varchar(32),
+        "title" character varying NOT NULL,
+        "description" character varying,
+        "imgUrl" character varying,
         "price" int NOT NULL
     );
     """),
@@ -68,9 +68,9 @@ steps = [
         CREATE TABLE Specifications (
           "specificationsID" uuid PRIMARY KEY,
           "darkMode" boolean NOT NULL,
-          "model" varchar(255) NOT NULL,
+          "model" character varying NOT NULL,
           "motionSensor" boolean NOT NULL,
-          "resolution" varchar(255) NOT NULL
+          "resolution" character varying NOT NULL
         );
     """),
 
@@ -78,8 +78,8 @@ steps = [
     step("""
         CREATE TABLE Cameras (
             "cameraID" uuid PRIMARY KEY,
-            "address" varchar(32),
-            "location" varchar(32),
+            "address" character varying,
+            "location" character varying,
             "specificationsID" uuid REFERENCES Specifications("specificationsID"),
             "organizationID" uuid REFERENCES Organizations("organizationID")
         );
@@ -90,8 +90,8 @@ steps = [
     CREATE TABLE Events (
         "eventID" uuid PRIMARY KEY,
         "dateTime" timestamp NOT NULL,
-        "imgID" varchar(32),
-        "note" varchar(255),
+        "imgID" character varying,
+        "note" character varying,
         "isImportant" boolean NOT NULL,
         "labels" json,
         "cameraID" uuid REFERENCES Cameras("cameraID")

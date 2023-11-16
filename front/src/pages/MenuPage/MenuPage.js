@@ -4,7 +4,7 @@ const MenuPage = () => {
     return (
       <div className='container'>
         <div className='menu-page'>
-            <div className='menu-page-item' onClick={() => {window.location.pathname = '/cameras'}}>Наблюдение</div>
+            <div className='menu-page-item' onClick={() => {window.location.pathname = '/watch'}}>Наблюдение</div>
             <div className='menu-page-item' onClick={() => {window.location.pathname = '/events'}}>Просмотр отчетов</div>
         </div>
       </div>
