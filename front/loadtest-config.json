@@ -1,0 +1,18 @@
+{
+    "target": "http://localhost:5000", 
+    "duration": "60s", 
+    "threads": 10,     
+    "scenario": {
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/api/users/login?login=user&password=123"
+        },
+        {
+          "method": "GET",
+          "path": "/api/events/getByOrganizationID?id=550e8400-e29b-41d4-a716-446655440000"
+        }
+      ]
+    }
+  }
+  

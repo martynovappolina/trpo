@@ -39,8 +39,6 @@ class EventRecord(Base):
             .all()
         return events
 
-    def delete(self, db):
-        db.query(EventRecord).filter(EventRecord.eventID == self.eventID).first().delete()
 
     def update(self, db):
         event = db.query(EventRecord).filter(EventRecord.eventID == self.eventID).first()

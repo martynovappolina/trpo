@@ -14,7 +14,8 @@
     "react-scripts": "5.0.1",
     "sass": "^1.69.5",
     "scss": "^0.2.4",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "wrk": "^1.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nightwatch": "^3.3.2"
   }
 }
