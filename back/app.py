@@ -1,7 +1,7 @@
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 import uvicorn
-from utils import run_migration, get_db
+from utils import run_migration
 from Api.routers import router
 
 app = FastAPI(title="TRPO API")
